@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="description" content="Welcome to my personal homepage! You can learn more about me and view my projects all in one place. Feel free to reach out with any questions!" />
+<meta name="keywords" content="portfolio, projects, contact, homepage, HTML examples" /> 
+<meta name="author" content="Megan Amber Gerth" />
+<meta name="viewport" content ="width=device-width, initial-scale=1.0" /> 
+
+<link rel="stylesheet" href="project.css" />
+
+<title>My Homepage</title>
+</head>
+
+<body>
+
+<!-- Header section -->
+<header>
+<h1 id="welcomeMsg">Welcome to Megan's Homepage! </h1>
+</header>
+
+<!--Navigational Menu -->
+<nav>
+<ul class="nav-flex">
+<li><a href="indexAbout.html">About</a></li>
+<li><a href="indexProjects.html">Projects</a></li>
+<li><a href="indexContact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- The Main Content -->
+<main class="main-flex">
+<section id="about">
+<h2>About Me</h2>
+<p>Greetings, my name is Megan Amber and I am transitioning into software development from the beauty industry. I am most excited about web page and app development!</p>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<table> 
+    <caption>Megan's Sample Projects</caption>
+    <colgroup>
+        <col style="background-color: #758c73;" />
+        <col>
+        <col style="background-color: #758c73;" />
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Portfolio Website</td>
+            <td>A personal website to showcase my most recent projects, including websites that contain CSS and animation. </td>
+            <td><img src="C:\Users\Megan\OneDrive - ECPI University\SDC260\ProjectPage.png " alt="Portfolio Preview" height="100px" width="200px"></td>
+        </tr>
+        <tr>
+            <td>Storefront Website</td>
+            <td>A website for a gluten free bakery to display their products, with a descritption and availability, all within a table.</td>
+            <td><img src="C:\Users\Megan\OneDrive - ECPI University\SDC260\StorePage.png" alt="Bakery Page" height="100px" width="200px"></td>
+        </tr>
+        <tr>
+            <td>Javascript Project</td>
+            <td>A website incorporating functionality with JavaScript.</td>
+            <td><img src="#" alt="JavaScript Project" height="100px" width="200px"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">More projects coming soon!</td>
+        </tr>
+    </tfoot>
+</table>
+</section>
+
+<section id="contact">
+<h2>Contact Form</h2>
+<form class="form-flex">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your name" />
+    <label for="email">Email:</label> 
+    <input type="email" id="email" name="email" required placeholder="Enter your email" />
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" />
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" placeholder="Type your message here"></textarea>
+    <input type="submit" value="Send Message" />
+</form>
+</section>
+
+</main>
+
+<!-- Footer section -->
+<footer>
+<p >&copy; &nbsp; 2025 Megan Gerth &mdash; All rights reserved </p>
+</footer>
+
+</body>
+<!-- JavaScript script element for a personalized welcome message  -->
+<script>
+    //Use prompt function to ask user for their name and display a personalized welcome message
+    let userName = prompt("Please enter your name:");
+    if (userName) {
+        document.getElementById("welcomeMsg").textContent = `Welcome to Megan's Homepage, ${userName}!`;
+    }
+</script>
+</html>

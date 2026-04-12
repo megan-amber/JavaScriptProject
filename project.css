@@ -1,0 +1,188 @@
+/* Background and Font*/
+body {
+    background: linear-gradient(to bottom right, #5c755a, #bfc78c);
+    font-family: arial, helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 25px;
+    background-color: #19270d;
+    color: #bfc78c;
+}
+/* Navigation Bar */
+.nav-flex {
+    list-style: none; /* Remove bullet points */
+    padding: 0; 
+    margin: 0;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the items */
+    background-color: #3d2607; /* Background color for the nav */
+    gap: 20px; /* Space between items */
+}
+.nav-flex li a {
+    text-decoration: none; /* Remove underline */
+    color: #bfc78c; /* Text color */
+    padding: 10px 15px; /* Padding for clickable area */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+.nav-flex li a:hover {
+    background-color: #bfc78c; /* Change background on hover */
+    color: #3d2607; /* Ensure text remains readable */
+}
+nav ul{
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #3d2607;
+}
+nav ul li {
+    margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #bfc78c; /* Text color */
+    padding: 10px 15px; /* Padding for clickable area */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: block; /* Make the link fill the li */
+}
+nav ul li a:hover {
+    background-color: #bfc78c;
+    color: #3d2607; /* Ensure text remains readable */
+}
+
+/* Main Sections */
+.main-flex {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center sections horizontally */
+    padding: 20px;
+    gap: 30px; /* Space between sections */
+}
+
+main section {
+    padding: 20px;
+    width: 45%;
+    min-width: 500px; /* Ensure sections are not too narrow */
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+main section:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+main section h2 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.5em;
+    color: #3d2607;
+    text-align: center;
+    background-color: #c5caa7;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+main section p {
+    text-align: center;
+    color: #3d2607;
+}
+caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3d2607;
+    margin-bottom: 10px;
+}
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #281803;
+    padding: 12px;
+    text-align: center;;
+}
+tbody td {
+    color: #3d2607;
+}
+thead, tfoot {
+    background-color: #3d2607;
+    color: #bfc78c;
+}
+
+/* Contact Form Styling */
+.form-flex {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 8px;
+    border: 1px solid #3d2607;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+input:focus,
+textarea:focus {
+    border-color: #bfc78c; /* Change border color on focus */
+}
+input[type="submit"] {
+    background-color: #3d2607;
+    color: #bfc78c;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color: #bfc78c; /* Change background on hover */
+    color: #3d2607; /* Ensure text remains readable */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 15px;
+    background-color: #3d2607;
+    color: #bfc78c;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .main-flex {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        align-items: center; /* Center sections horizontally */
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 601px) {
+    .main-flex {
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .main-flex {
+        flex-direction: column; /* Arrange sections side by side on larger screens */
+        flex-wrap: wrap; /* Allow wrapping to next line if space is limited */
+        justify-content: center;
+    }
+}
