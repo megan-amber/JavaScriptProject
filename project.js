@@ -1,9 +1,19 @@
 
- //Use prompt function to ask user for their name and display a personalized welcome message
-let userName = prompt("Please enter your name:");
-if (userName) {
-    document.getElementById("welcomeMsg").textContent = `Welcome to Megan's Homepage, ${userName}!`;
-}
+// Show work in progress modal on page load
+const wipModal = document.getElementById('wipModal');
+const closeBtn = document.querySelector('.close-btn');
+
+// Close modal when close button is clicked
+closeBtn.addEventListener('click', function() {
+    wipModal.classList.add('hidden');
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', function(event) {
+    if (event.target === wipModal) {
+        wipModal.classList.add('hidden');
+    }
+});
 
 // Check number of projects in PersonalProjects and show/hide featured sections accordingly
 const personalProjectsDiv = document.getElementById('PersonalProjects');

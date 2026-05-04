@@ -16,6 +16,15 @@
 
 <body>
 
+<!-- Work in Progress Modal -->
+<div id="wipModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Work in Progress</h2>
+        <p>Thank you for visiting! This page is a work in progress so check back soon for updates!</p>
+    </div>
+</div>
+
 <!-- Header section -->
 <header>
 <h1 id="welcomeMsg">Welcome to Megan's Homepage! </h1>
@@ -121,8 +130,11 @@
     <input type="text" id="subject" name="subject" />
     <label for="message">Message:</label>
     <textarea id="message" name="message" rows="5" placeholder="Type your message here"></textarea>
-    <button type="submit" id="submitButton">Send Message</button>
-    <div id="confirmationMessage"></div>
+    <div class="button-tooltip-container">
+        <button type="submit" id="submitButton">Send Message</button>
+        <span class="tooltip">Click to send your message</span>
+    </div>
+    <div id="confirmationMessage"></div>   
 </form>
 </section>
 
