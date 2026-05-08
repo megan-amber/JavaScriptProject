@@ -98,17 +98,77 @@ setTimeout(function() {
 }, 3000);
 
 //modify existing elements on the page
+
+// Define Project class
+class Project {
+    constructor(title, summary, imageUrl, link) {
+        this.title = title;
+        this.summary = summary;
+        this.imageUrl = imageUrl;
+        this.link = link;
+    }
+}
+
+// Create project instances
+const project1 = new Project(
+    "Portfolio Website",
+    "A personal website to showcase my most recent projects, including websites that contain CSS and animation.",
+    "C:\\Users\\Megan\\OneDrive - ECPI University\\SDC260\\ProjectPage.png",
+    "https://megan-amber.github.io/"
+);
+
+const project2 = new Project(
+    "Storefront Website",
+    "A website for a gluten free bakery to display their products, with a description and availability, all within a table.",
+    "C:\\Users\\Megan\\OneDrive - ECPI University\\SDC260\\StorePage.png",
+    "#"
+);
+
+const project3 = new Project(
+    "Megan's Personal Library Java Program",
+    "A Java program for managing a personal library collection.",
+    "C:\\Users\\Megan\\OneDrive - ECPI University\\SDC355 - Javascript\\Starter Files\\Starter Files\\Project\\MeganPersonalLibraryJava.png",
+    "https://github.com/megan-amber/MegansHomeLibrary"
+);
+
+// Array of project objects
+const projectData = [project1, project2, project3];
+
+// On page load, check sessionStorage for projects
+let projects;
+const storedProjects = sessionStorage.getItem('projects');
+if (storedProjects) {
+    projects = JSON.parse(storedProjects);
+} else {
+    projects = projectData;
+    sessionStorage.setItem('projects', JSON.stringify(projects));
+}
+
+// Render projects dynamically
+const projectsSection = document.getElementById('projects');
+const tbody = projectsSection.querySelector('tbody');
+tbody.innerHTML = ''; // Clear existing rows
+
+projects.forEach(project => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td><a href="${project.link}" target="_blank">${project.title}</a></td>
+        <td>${project.summary}</td>
+        <td><img src="${project.imageUrl}" alt="${project.title}" height="100px" width="200px"></td>
+    `;
+    tbody.appendChild(tr);
+});
 //Animate the welcome message by changing its color every second using setInterval
 const welcomeMsg = document.getElementById("welcomeMsg");
-const colors = ["#b35d49", "#64b172", "#94a2e0", "#dbc777", "#ab81bb"];
+const colors = ["#eaedd8", "#bfc78c", "#5c755a", "#71532b", "#3d2607"];
 let colorIndex = 0;
 setInterval(() => {
     welcomeMsg.style.color = colors[colorIndex];
     colorIndex = (colorIndex + 1) % colors.length;
-}, 1000);
+}, 500);
 
 //Animate the featured content header by changing its font size every .5 seconds using setInterval
-const featuredHeader = document.getElementById("featuredHeader");
+/*const featuredHeader = document.getElementById("featuredHeader");
 let fontSize = 24;
 let increasing = true;
 setInterval(() => {
@@ -124,4 +184,4 @@ setInterval(() => {
         }
     }
     featuredHeader.style.fontSize = `${fontSize}px`;
-}, 500);
+}, 500);*/
